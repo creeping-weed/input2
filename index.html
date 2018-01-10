@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单校验</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="content">
+        <h3>用户注册信息</h3>
+        <div class="userAgt">
+            <h4>用户协议内容：</h4>
+            <p>
+                北京陌陌科技有限公司（以下简称“陌陌科技”）
+                在此特别提醒您（用户）在注册成为用户之前，请认真阅读本
+                《用户协议》（以下简称“协议”），确保您充分理解本协议中各条款。
+                请您审慎阅读并选择接受或不接受本协议。除非您接受本协议所有条款，
+                否则您无权注册、
+                登录或使用本协议所涉服务。您的注册、登录、使用等行为将视为对本协议的接受，
+                并同意接受本协议各项条款的约束。
+            </p>
+        </div>
+        <div class="inputBox">
+            <div class="ck">
+                <input type="checkbox" id="ck" ><label for="ck">我同意此协议内容</label>
+            </div>
+            <form>
+                <div class="userName">
+                    <label for="userName" class="ml30">昵称:</label>
+                    <input type="text" id="userName" name="username" placeholder="请输入昵称" autocomplete="off">
+                    <span class="prompt"></span>
+                    <span class="icon"><img src="images/true.png" alt=""></span>
+                </div>
+                <div class="password1">
+                    <label for="password1" class="ml30">密码:</label>
+                    <input type="password" id="password1" name="password1" placeholder="请输入密码">
+                    <span class="prompt"></span>
+                    <span class="icon"><img src="images/true.png" alt=""></span>
+                </div>
+                <div class="password2">
+                    <label for="password2">确认密码:</label>
+                    <input type="password" id="password2" name="password2" placeholder="请再次输入密码">
+                    <span class="prompt"></span>
+                    <span class="icon"><img src="images/true.png" alt=""></span>
+                </div>
+                <div class="sel">
+                    出生日期：
+                    <select name="year">
+
+                    </select>年
+                    <select name="month">
+
+                    </select>月
+                    <select name="day">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>日
+                </div>
+                <div class="mail">
+                    <label for="mail">注册邮箱:</label>
+                    <input type="text" id="mail" name="mail" placeholder="请输入邮箱">
+                    <span class="prompt"></span>
+                    <span class="icon"><img src="images/true.png" alt=""></span>
+                </div>
+                <div class="code">
+                    <label for="code" class="ml15">验证码:</label>
+                    <input type="text" id="code" name="code" placeholder="请输入验证码">
+                    <span class="refresh"><img src="images/refresh1.png" alt=""></span>
+                    <span class="keyCode"></span>
+                    <span class="prompt"></span>
+                    <span class="icon"><img src="images/fales.png" alt=""></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="js/index.js"></script>
+</html>
