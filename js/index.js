@@ -1,5 +1,5 @@
 window.onload=function(){
-    //开始禁用框
+    //开始禁用文本框
     disabled(true);
     //获取keyCode对象
     var keyCode=document.querySelector('.keyCode');
@@ -30,7 +30,7 @@ window.onload=function(){
     var date=new Date().getFullYear();
     year.innerHTML=creatOption(date-10,date-20);
     month.innerHTML=creatOption(12);
-    month.addEventListener('focusout',function(){
+    day.addEventListener('focus',function(){
        day.innerHTML=creatOption(getDay(year.value,month.value));
     });
     //昵称、密码、邮箱校验
@@ -128,7 +128,7 @@ window.onload=function(){
         icon('.code .icon','');
     };
     //以下为函数封装
-    //禁用文本框;第一个参数为布尔值，必传；第二个参数为dom对象，不传则禁用所有文本框
+    //禁用文本框;第一个参数为布尔值，必传；第二个参数为dom对象，不传则对所有文本框操作
     function disabled(boolean,dom){
         if(dom){
             dom.disabled=boolean;
@@ -180,12 +180,10 @@ window.onload=function(){
         }else {
             resut=num1+num2;
         }
-        console.log(num1+i+num2);
         keyCode.innerHTML=num1+i+num2+'=?';
-        console.log(resut);
         return resut;
     }
-    //校验提示函数,没有传参，所有提示清空；
+    //校验提示函数,第一个为dom选择器，第二个参数为提示内容，没有传参，所有提示清空；
     function prompt(select,value){
         if(!select){
             var dom=document.querySelectorAll('.prompt');
@@ -196,7 +194,7 @@ window.onload=function(){
             document.querySelector(select).innerHTML=value;
         }
     }
-    //显示隐藏图标函数
+    //显示隐藏图标函数，第一个参数为选择器，第二个为图片名称，不传则清空所有图标
     function icon(select,imgName){
         if(!select){
             var icons=document.querySelectorAll('.icon');
@@ -205,8 +203,12 @@ window.onload=function(){
             }
         }else {
             var icon=document.querySelector(select);
-            icon.style.display='block';
-            icon.querySelector('img').src='images/'+imgName+'.png';
+            if(imgName==''){
+                icon.style.display='none';
+            }else{
+                icon.style.display='block';
+                icon.querySelector('img').src='images/'+imgName+'.png';
+            }
         }
     }
 };
